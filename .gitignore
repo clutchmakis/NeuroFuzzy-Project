@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+results/
+results2/
+level1_model/
+saved_model2/
+*.h5
+*.ckpt*
