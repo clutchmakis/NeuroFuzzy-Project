@@ -43,7 +43,7 @@ def evaluate_model(model, X_test, y_test, encoder, model_name: str = "Model"):
 
     accuracy = accuracy_score(true_labels, predicted_labels)
     precision, recall, fscore, support = precision_recall_fscore_support(
-        true_labels, predicted_labels
+        true_labels, predicted_labels, average=None
     )
 
     print(f"\n{'='*60}")

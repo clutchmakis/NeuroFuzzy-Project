@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-from nlp_classifier.preprocessor import TextPreprocessor, CONTRACTIONS, _CONTRACTION_RE
+from nlp_classifier.preprocessor import TextPreprocessor, CONTRACTIONS
 from nlp_classifier.models import build_cnn_model, build_multicnn_model, build_bilstm_model
 from nlp_classifier.evaluation import evaluate_model, measure_inference_time
 
@@ -61,9 +61,12 @@ class TestTextPreprocessor:
         padded = self.tp.preprocess_text_data(["hello world"])
         assert padded.shape == (1, 50)
 
-    def test_contraction_regex_matches_all_keys(self):
-        for key in CONTRACTIONS:
-            assert _CONTRACTION_RE.search(key) is not None
+    def test_all_contractions_expanded(self):
+        """Verify every entry in CONTRACTIONS is expanded by preprocess_text."""
+        for contraction, expansion in CONTRACTIONS.items():
+            text = f"word {contraction} word"
+            result = self.tp.preprocess_text([text])[0]
+            assert contraction.lower() not in result
 
 
 # ---------------------------------------------------------------------------
