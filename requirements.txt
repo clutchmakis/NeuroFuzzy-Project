@@ -1,0 +1,13 @@
+# Direct dependencies imported by NeuroFuzzy_Project.ipynb.
+# The original experiment did not record package versions.
+datasets
+jupyterlab
+keras
+matplotlib
+nltk
+numpy
+pandas
+scikit-learn
+tensorflow
+torch
+transformers

@@ -1,0 +1,28 @@
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Local dataset (source and redistribution license are not documented)
+news-classification.csv
+
+# Generated training outputs and saved models
+results/
+results2/
+level1_model/
+saved_model2/
+*.h5
+*.keras
+*.ckpt*
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

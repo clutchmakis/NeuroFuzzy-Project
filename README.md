@@ -92,23 +92,6 @@ Run the cells from top to bottom. The CNN experiments can run on a CPU, while th
 - Separate models are trained for the two hierarchy levels; the Level 2 prediction is not constrained by the Level 1 prediction.
 - Accuracy is reported for comparability with the original experiment. Macro-averaged metrics would better expose performance across imbalanced Level 1 categories.
 
-## Limitations
-
-- Dataset provenance and licensing are missing, which blocks complete reproduction from a fresh clone.
-- Dependency versions, random seeds, hardware details, and trained checkpoints were not captured.
-- The transformer experiment evaluates on its validation split and has no separate final test split.
-- The notebook is monolithic and contains training, evaluation, plotting, and artifact-saving logic in the same document.
-- There is no lightweight classical baseline, such as TF-IDF with logistic regression, against which to compare the neural models.
-
-## Recommended next steps
-
-1. Document the dataset source and license, then add a deterministic data-preparation script.
-2. Define fixed train/validation/test splits and seed NumPy, TensorFlow, PyTorch, and dataframe shuffling.
-3. Extract preprocessing, model construction, training, and evaluation into tested Python modules.
-4. Add a TF-IDF baseline and report macro F1 alongside accuracy.
-5. Add a small inference entry point and a downloadable example model or model card.
-6. Add continuous integration after the reusable package and fast unit tests are on the default branch.
-
 ## Authors
 
 - Thomas Katraouras
